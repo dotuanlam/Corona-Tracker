@@ -3,6 +3,7 @@ export const theme = createSlice({
   name: "theme",
   initialState: {
     theme: "light",
+    languge: "en",
   },
   reducers: {
     update: (state, action) => {

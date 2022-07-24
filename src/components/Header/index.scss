@@ -1,47 +1,178 @@
-.container__header--light {
+.container__headerLight {
   position: relative;
-  padding: 0.1rem 1rem;
   background-color: #eee;
-  border-bottom: 1px solid rgb(240, 237, 237);
-  padding-top: 1.5rem;
-  box-shadow: rgb(248, 247, 247) 1px 1px 1px 1px;
-  .ant-select:not(.ant-select-customize-input) .ant-select-selector {
-    background-color: #eee;
+  padding: 1rem 1rem;
+  .container__header--navbarVertical {
+    background-color: rgba($color: #000000, $alpha: 0.7);
+    width: -webkit-fill-available;
+    position: absolute;
+    top: 100%;
+    animation-name: toBottom;
+    left: 0;
+    animation-duration: 1s;
+    z-index: 999999;
+    ul {
+      list-style: none;
+      text-align: center;
+      line-height: 2rem;
+      li {
+        span {
+          color: #eee;
+        }
+      }
+      li:hover {
+        cursor: pointer;
+        border-left: 5px solid #bc2adb;
+        span {
+          color: #bc2adb;
+        }
+      }
+    }
   }
-  .container__header--menubar {
-    color: #1aad90;
-    border: 1px solid #1aad90;
+  .container__header--navbar {
+    ul {
+      li {
+        span {
+          color: #2d333b;
+        }
+      }
+      li:active {
+        span {
+          color: #000000;
+        }
+      }
+    }
   }
 }
-.container__header--dark {
+.container__headerDark {
   position: relative;
-  background-color: #0b0055;
-  padding: 0.1rem 1rem;
-  padding-top: 1.5rem;
-  box-shadow: rgb(248, 247, 247) 1px 1px 1px 1px;
-  .ant-select:not(.ant-select-customize-input) .ant-select-selector {
-    background-color: #0b0056;
+  background-color: #2d333b;
+  padding: 1rem 1rem;
+  .container__header--navbarVertical {
+    background-color: rgba($color: #000000, $alpha: 0.7);
+    width: -webkit-fill-available;
+    position: absolute;
+    top: 100%;
+    animation-name: toBottom;
+    left: 0;
+    animation-duration: 1s;
+    z-index: 99999999;
+    ul {
+      list-style: none;
+      text-align: center;
+      line-height: 2rem;
+      li {
+        span {
+          color: #eee;
+        }
+      }
+      li:hover {
+        cursor: pointer;
+        border-left: 5px solid #bc2adb;
+        span {
+          color: #bc2adb;
+        }
+      }
+    }
   }
-  .container__header--menubar {
+  .container__header--navbar {
+    ul {
+      li {
+        span {
+          color: #eee;
+        }
+      }
+      li:active {
+        span {
+          color: #666;
+        }
+      }
+    }
+  }
+  .container__header--MenuIcon {
     color: #eee;
-    border: 1px solid #eee;
+    border: 0.1rem solid #eee;
   }
 }
-.container__header--menubar {
-  font-size: 2rem;
-  border: 1px solid #111;
-  position: absolute;
-  z-index: 999;
-  display: none;
-  cursor: pointer;
-  top: 1.8rem;
-  right: 2rem;
+@keyframes toBottom {
+  from {
+    top: 0;
+  }
+  to {
+    top: 100%;
+  }
 }
-@media only screen and (max-width: 628px) {
-  .container__header--menubar {
+/********************/
+@media only screen and (max-width: 868px) {
+  .container__headerLight {
+    .container__header--MenuIcon {
+      display: flex;
+    }
+    .container__header--navbar {
+      display: none;
+    }
+  }
+  .container__headerDark {
+    .container__header--MenuIcon {
+      display: flex;
+    }
+    .container__header--navbar {
+      display: none;
+    }
+  }
+}
+@media only screen and (min-width: 867px) {
+  .container__headerLight {
+    .container__header--MenuIcon {
+      display: none;
+    }
+    .container__header--navbar {
+      display: flex;
+    }
+  }
+  .container__headerDark {
+    .container__header--MenuIcon {
+      display: none;
+    }
+    .container__header--navbar {
+      display: flex;
+    }
+  }
+}
+
+.container__header--navbar {
+  ul {
     display: flex;
+    text-decoration: none;
+    list-style: none;
+    li {
+      position: relative;
+      margin-right: 1rem;
+      font-size: 1.3rem;
+      cursor: pointer;
+    }
+    li:hover {
+      span {
+        color: #bc2adb;
+        border-bottom: 2px solid #bc2adb;
+      }
+    }
   }
-  .container__header-navbar{
-    display: none;
-  }
+}
+.container__header--MenuIcon {
+  cursor: pointer;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #666;
+  border: 0.1rem solid;
+  border-radius: 0.3rem;
+  width: 2rem;
+  height: 2rem;
+  justify-content: center;
+  align-items: center;
+  right: 2rem;
+  top: 2rem;
+  position: absolute;
+  z-index: 9999;
+  display: none;
 }
